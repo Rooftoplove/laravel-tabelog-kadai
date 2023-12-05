@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('resaurants', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('store_name', 50); //店舗名
             $table->string('telephone', 15); //電話番号
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resaurants');
+        Schema::dropIfExists('restaurants');
     }
 };
