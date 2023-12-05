@@ -11,6 +11,6 @@ class Category extends Model
 
     public function resaurants()
     {
-        return $this->hasMany(resaurant::class);
+        return $this->hasMany(Resaurant::class);
     }
 }
