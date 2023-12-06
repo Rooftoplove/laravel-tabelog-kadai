@@ -1,12 +1,16 @@
-<a href="{{ route('restaurants.create') }}"> Create New Resaurant</a>
+<a href="{{ route('restaurants.create') }}">店舗登録</a>
 
 <table>
   <tr>
-    <th>Store_name</th>
-    <th>telephone</th>
-    <th>address</th>
-    <th>Category ID</th>
-    <th>Action</th>
+    <th>店舗名</th>
+    <th>電話番号</th>
+    <th>住所</th>
+    <th>開始時間</th>
+    <th>閉店時間</th>
+    <th>定休日</th>
+    <th>上限価格</th>
+    <th>下限価格</th>
+    <th>カテゴリID</th>
   </tr>
   @foreach ($restaurants as $restaurant)
   <tr>
