@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
+use App\Models\Restaurant;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('restaurants', RestaurantController::class);
+Route::get('restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::resource('reviews', ReviewController::class);
+
+Route::get('restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');

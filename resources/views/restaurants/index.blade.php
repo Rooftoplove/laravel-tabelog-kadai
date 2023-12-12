@@ -22,6 +22,7 @@
         <th>上限価格</th>
         <th>下限価格</th>
         <th>カテゴリID</th>
+        <th></th>
       </tr>
       @foreach ($restaurants as $restaurant)
       <tr>
@@ -34,7 +35,7 @@
         <td>{{ $restaurant->max_price }}</td>
         <td>{{ $restaurant->lower_price }}</td>
         <td>{{ $restaurant->category_id }}</td>
-
+        <td><a href="{{route('restaurants.detail',$restaurant)}}">詳細</a></td>
       </tr>
       @endforeach
     </table>
