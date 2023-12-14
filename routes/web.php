@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
+use App\Models\Reservation;
 use App\Models\Restaurant;
 
 /*
@@ -26,3 +28,7 @@ Route::get('restaurants', [RestaurantController::class, 'index'])->name('restaur
 Route::resource('reviews', ReviewController::class);
 
 Route::get('restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');
+
+Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
+
+Route::get('/reservations/subscription', [ReservationController::class, 'subscription'])->name('subscription');

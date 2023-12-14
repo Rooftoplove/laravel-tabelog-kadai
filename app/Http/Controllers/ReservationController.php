@@ -9,8 +9,16 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        $restaurants = Reservation::all();
+        $reservations = Reservation::all();
 
         return view('reservations.index', compact('reservations'));
+    }
+
+    public function subscription()
+    {
+
+        $subscription = Reservation::all();
+
+        return view('reservations.subscription', compact('subscription'));
     }
 }

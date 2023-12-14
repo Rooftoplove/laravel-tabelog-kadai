@@ -1,5 +1,3 @@
-<a href="{{ route('reservations.create') }}"> Create New Reservation</a>
-
 <table>
   <tr>
     <th>ID</th>
