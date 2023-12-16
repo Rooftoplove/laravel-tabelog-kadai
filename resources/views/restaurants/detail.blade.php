@@ -23,5 +23,5 @@
 
   <h2>レビュー</h2>
   <td>登録</td>
-  <h2><a href="{{route('reservations.subscription')}}">予約</a></h2>
+  <h2><a href="{{route('subscription')}}">予約</a></h2>
 </body>

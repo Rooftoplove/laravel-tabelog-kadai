@@ -31,4 +31,4 @@ Route::get('restaurants/{restaurant}', [RestaurantController::class, 'detail'])-
 
 Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
-Route::get('/reservations/subscription', [ReservationController::class, 'subscription'])->name('subscription');
+Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');

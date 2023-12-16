@@ -9,6 +9,16 @@
 
 <body>
   <h1>予約</h1>
+  <form method="POST">
+    @csrf
+    <label for="date">予約日:</label>
+    <input type="date" name="date" required>
+
+    <label for="people">予約人数:</label>
+    <input type="intdiv" name="intdiv" required>
+
+    <button type="submit">予約する</button>
+  </form>
 </body>
 
 </html>
