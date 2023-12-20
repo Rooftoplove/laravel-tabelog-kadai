@@ -21,7 +21,7 @@
   <td>{{ $restaurant->lower_price }}</td><br>
   <td>{{ $restaurant->category_id }}</td><br>
 
-  <h2>レビュー</h2>
+  <h2><a href="{{route('reviews.index')}}">レビュー</a></h2>
   <td>登録</td>
   <h2><a href="{{route('subscription')}}">予約</a></h2>
 </body>

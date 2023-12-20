@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
+
+    public function index()
+    {
+        $reviews = Review::all();
+
+        return view('reviews.index', compact('reviews'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -23,7 +31,6 @@ class ReviewController extends Controller
         $review = new Review();
         $review->content = $request->input('evaluation');
         $review->content = $request->input('comment');
-        $review->product_id = $request->input('restaurant_id');
         $review->user_id = Auth::user()->id;
         $review->save();
 

@@ -23,12 +23,12 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
+Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
 
-Route::resource('reviews', ReviewController::class);
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 
-Route::get('restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');
+Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');
 
-Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
+Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
 Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');
