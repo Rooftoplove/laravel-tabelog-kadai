@@ -32,5 +32,5 @@ Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
 Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');
-
+Route::post('/reservations/register', [ReservationController::class, 'store'])->name('reservations.register');
 Route::get('restaurants/{restaurant}/favorite', [RestaurantController::class, 'favorite'])->name('restaurants.favorite');

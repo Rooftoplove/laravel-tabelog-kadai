@@ -9,13 +9,15 @@
 
 <body>
   <h1>予約</h1>
-  <form method="POST">
+  <form method="POST" action="{{route('reservations.register')}}">
     @csrf
     <label for="date">予約日:</label>
     <input type="date" name="date" required>
+    <label for="time">予約時間:</label>
+    <input type="time" name="time" min="11:00" max="23:00" required>
 
     <label for="people">予約人数:</label>
-    <input type="intdiv" name="intdiv" required>
+    <input type="number" name="people" required>
 
     <button type="submit">予約する</button>
   </form>

@@ -24,9 +24,14 @@ class ReservationController extends Controller
 
     public function store(Request $request)
     {
-        Reservation::create([
-            'date' => $request->input('date'),
-            'people' => $request->input('people'),
-        ]);
+        $time = $request->input('time');
+        $date = $request->input('date');
+        $reservationTime = $date . ' ' . $time;
+        $reservation = new Reservation();
+        $reservation->time = $reservationTime;
+        $reservation->people = $request->input('people');
+        $reservation->save();
+
+        return redirect()->route('reservations.index');
     }
 }
