@@ -25,13 +25,14 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'content' => 'required'
+            'comment' => 'required'
         ]);
 
         $review = new Review();
-        $review->content = $request->input('evaluation');
-        $review->content = $request->input('comment');
+        $review->evaluation = $request->input('evaluation');
+        $review->comment = $request->input('comment');
         $review->user_id = Auth::user()->id;
+        $review->restaurants_id = Auth::restaurant()->id;
         $review->save();
 
         return back();

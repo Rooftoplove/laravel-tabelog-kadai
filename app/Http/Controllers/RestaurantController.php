@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -16,5 +17,12 @@ class RestaurantController extends Controller
     public function detail(Restaurant $restaurant)
     {
         return view('restaurants.detail', compact('restaurant'));
+    }
+
+    public function favorite(Restaurant $restaurant)
+    {
+        Auth::user()->togglefavorite($restaurant);
+
+        return back();
     }
 }

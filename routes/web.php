@@ -21,9 +21,9 @@ use App\Models\Restaurant;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
+Route::get('/', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 
@@ -32,3 +32,5 @@ Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
 Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');
+
+Route::get('restaurants/{restaurant}/favorite', [RestaurantController::class, 'favorite'])->name('restaurants.favorite');

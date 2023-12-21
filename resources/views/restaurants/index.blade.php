@@ -19,9 +19,6 @@
         <th>開始時間</th>
         <th>閉店時間</th>
         <th>定休日</th>
-        <th>上限価格</th>
-        <th>下限価格</th>
-        <th>カテゴリID</th>
         <th></th>
       </tr>
       @foreach ($restaurants as $restaurant)
@@ -32,9 +29,6 @@
         <td>{{ $restaurant->open_time }}</td>
         <td>{{ $restaurant->close_time }}</td>
         <td>{{ $restaurant->regular_holiday }}</td>
-        <td>{{ $restaurant->max_price }}</td>
-        <td>{{ $restaurant->lower_price }}</td>
-        <td>{{ $restaurant->category_id }}</td>
         <td><a href="{{route('restaurants.detail',$restaurant)}}">詳細</a></td>
       </tr>
       @endforeach
