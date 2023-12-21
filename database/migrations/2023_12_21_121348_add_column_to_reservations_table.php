@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('reviews', function (Blueprint $table) {
+        Schema::table('reservations', function (Blueprint $table) {
             $table->bigInteger('user_id')->unsigned()->after('id'); //ユーザーID
             $table->bigInteger('restaurant_id')->unsigned()->after('user_id'); //レストランID
         });
@@ -26,7 +26,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('reviews', function (Blueprint $table) {
+        Schema::table('reservations', function (Blueprint $table) {
             $table->dropColumn('user_id');
             $table->dropColumn('restaurant_id');
         });
