@@ -9,6 +9,7 @@
 
 <body>
   <h1>予約</h1>
+  <h2>{{$restaurant->store_name}}</h2>
   <form method="POST" action="{{route('reservations.register')}}">
     @csrf
     <label for="date">予約日:</label>
@@ -18,7 +19,7 @@
 
     <label for="people">予約人数:</label>
     <input type="number" name="people" required>
-
+    <input type="hidden" name="restaurant_id" value="{{$restaurant->id}}">
     <button type="submit">予約する</button>
   </form>
 </body>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -14,12 +16,13 @@ class ReservationController extends Controller
         return view('reservations.index', compact('reservations'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $restaurantId = $request->input('restaurant_id');
+        $restaurant = Restaurant::find($restaurantId);
 
-        $subscription = Reservation::all();
 
-        return view('reservations.subscription', compact('subscription'));
+        return view('reservations.subscription', compact('restaurant'));
     }
 
     public function store(Request $request)
@@ -28,6 +31,8 @@ class ReservationController extends Controller
         $date = $request->input('date');
         $reservationTime = $date . ' ' . $time;
         $reservation = new Reservation();
+        $reservation->user_id = Auth::id();
+        $reservation->restaurant_id = $request->input('restaurant_id');
         $reservation->time = $reservationTime;
         $reservation->people = $request->input('people');
         $reservation->save();
