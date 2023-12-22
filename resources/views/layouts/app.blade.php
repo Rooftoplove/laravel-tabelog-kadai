@@ -1,35 +1,25 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <!-- Styles -->
-    <link href="{{ asset('css/nagoyameshi.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAGOYAMESHI</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
 <body>
-    <div id="app">
-        @component('components.header')
-        @endcomponent
 
-        <main class="py-4 mb-5">
-            @yield('content')
-        </main>
-    </div>
+
+    <main>
+        @yield('content') <!-- 子テンプレートの内容が挿入される -->
+    </main>
+
+    <!-- 共通のフッター -->
+    <footer>
+        <p>&copy; 2023 My Laravel App</p>
+    </footer>
+
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+.home-header {
+  background-color: #38fafd;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  margin-top: 20px;
+  height: 50px;
+}

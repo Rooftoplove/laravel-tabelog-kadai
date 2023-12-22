@@ -24,17 +24,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'comment' => 'required'
-        ]);
-
         $review = new Review();
+        $review->user_id = Auth::id();
+        $review->restaurant_id = $request->input('restaurant_id');
         $review->evaluation = $request->input('evaluation');
         $review->comment = $request->input('comment');
-        $review->user_id = Auth::user()->id;
-        $review->restaurants_id = Auth::restaurant()->id;
         $review->save();
 
-        return back();
+        return redirect()->route('reviews.index');
     }
 }

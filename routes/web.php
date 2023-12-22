@@ -21,11 +21,13 @@ use App\Models\Restaurant;
 
 Auth::routes(['verify' => true]);
 
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/', [RestaurantController::class, 'index'])->name('restaurants.index');
+Route::get('/restaurants/index', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+Route::post('/reviews/register', [ReviewController::class, 'store'])->name('reviews.register');
 
 Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');
 
