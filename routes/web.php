@@ -22,7 +22,6 @@ use App\Models\Restaurant;
 Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/restaurants/index', [RestaurantController::class, 'index'])->name('restaurants.index');
 
