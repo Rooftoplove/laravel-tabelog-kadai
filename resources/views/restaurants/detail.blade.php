@@ -18,6 +18,16 @@
 
   <td><a href="{{route('subscription',['restaurant_id'=>$restaurant->id])}}">予約追加</a></td>
 
+  @if ($restaurant->isFavoriteBy(Auth::user()))
+  <a href="{{route('restaurants.unfavorite' , $restaurant)}}">
+    お気に入り解除
+  </a>
+  @else
+  <a href="{{route('restaurants.favorite' , $restaurant)}}">
+    お気に入り
+  </a>
+  @endif
+
   <h2>レビュー</h2>
 
   <a href="{{route('reviews.index')}}">レビュー投稿</a></td>
