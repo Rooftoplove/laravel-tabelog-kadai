@@ -10,7 +10,7 @@ use Overtrue\LaravelFavorite\Traits\Favoriteable;
 
 class Restaurant extends Model
 {
-    use HasFactory, isFavoriteable;
+    use HasFactory, Favoriteable;
 
     public function category()
     {
