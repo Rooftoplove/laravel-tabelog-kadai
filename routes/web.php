@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
 use App\Models\Reservation;
 use App\Models\Restaurant;
 
@@ -35,3 +36,9 @@ Route::get('/reservations', [ReservationController::class, 'index'])->name('rese
 Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');
 Route::post('/reservations/register', [ReservationController::class, 'store'])->name('reservations.register');
 Route::get('restaurants/{restaurant}/favorite', [RestaurantController::class, 'favorite'])->name('restaurants.favorite');
+
+Route::controller(UserController::class)->group(function () {
+  Route::get('users/mypage', 'mypage')->name('mypage');
+  Route::get('users/mypage/edit', 'edit')->name('mypage.edit');
+  Route::put('users/mypage', 'update')->name('mypage.update');
+});

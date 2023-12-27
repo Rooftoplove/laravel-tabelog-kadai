@@ -15,6 +15,7 @@
   @include('components.header')
 
   <h1>トップページ</h1>
+  <a href="{{route('mypage')}}">会員情報</a>
 
   @endsection
 </body>
