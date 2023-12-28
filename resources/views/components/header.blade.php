@@ -1,8 +1,7 @@
 <header class="home-header">
-  <h1>NAGOYAMESHI</h1>
+  <h1><a href="{{route('home')}}">NAGOYAMESHI</a></h1>
   <nav>
     <ul>
-      <li><a href="{{route('home')}}">ホーム</a></li>
       <li><a href="{{route('restaurants.index')}}">店舗一覧</a></li>
     </ul>
   </nav>

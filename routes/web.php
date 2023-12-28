@@ -32,10 +32,10 @@ Route::post('/reviews/register', [ReviewController::class, 'store'])->name('revi
 Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');
 
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
-
 Route::get('/reservations/subscription', [ReservationController::class, 'create'])->name('subscription');
 Route::post('/reservations/register', [ReservationController::class, 'store'])->name('reservations.register');
 Route::get('restaurants/{restaurant}/favorite', [RestaurantController::class, 'favorite'])->name('restaurants.favorite');
+Route::get('restaurants/{restaurant}/unfavorite', [RestaurantController::class, 'unfavorite'])->name('restaurants.unfavorite');
 
 Route::controller(UserController::class)->group(function () {
   Route::get('users/mypage', 'mypage')->name('mypage');

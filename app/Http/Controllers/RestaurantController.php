@@ -16,6 +16,7 @@ class RestaurantController extends Controller
 
     public function detail(Restaurant $restaurant)
     {
+
         return view('restaurants.detail', compact('restaurant'));
     }
 

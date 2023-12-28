@@ -17,8 +17,9 @@
   <td>価格：{{ $restaurant->lower_price }}〜{{ $restaurant->max_price }}</td><br>
 
   <td><a href="{{route('subscription',['restaurant_id'=>$restaurant->id])}}">予約追加</a></td>
+  <br>
 
-  @if ($restaurant->isFavoriteBy(Auth::user()))
+  @if ($restaurant->hasBeenFavoritedBy(Auth::user()))
   <a href="{{route('restaurants.unfavorite' , $restaurant)}}">
     お気に入り解除
   </a>

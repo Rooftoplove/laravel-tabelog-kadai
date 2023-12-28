@@ -14,8 +14,18 @@
   @section('content')
   @include('components.header')
 
-  <h1>トップページ</h1>
-  <a href="{{route('mypage')}}">会員情報</a>
+  <h3>店舗</h3>
+  <a href="{{route('restaurants.index')}}">検索</a>
+
+  <h3>予約一覧</h3>
+  <a href="{{route('reservations.index')}}">予約確認</a>
+
+  <h3>お気に入り一覧</h3>
+  <a href="">お気に入り</a>
+  <h3>会員情報</h3>
+  <a href="{{route('mypage')}}">編集</a>
+  <h3>会社情報</h3>
+  <a href="">会社情報</a>
 
   @endsection
 </body>
