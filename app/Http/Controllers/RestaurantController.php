@@ -22,7 +22,8 @@ class RestaurantController extends Controller
 
     public function favorite(Restaurant $restaurant)
     {
-        Auth::user()->togglefavorite($restaurant);
+
+        Auth::user()->toggleFavorite($restaurant);
 
         return back();
     }

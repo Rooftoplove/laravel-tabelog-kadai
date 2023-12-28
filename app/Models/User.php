@@ -66,11 +66,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Reservation::class);
     }
-
-    public function toggleFavorite($restaurant)
-    {
-        Auth::user()->togglefavorite($restaurant);
-
-        return back();
-    }
 }
