@@ -21,7 +21,7 @@
   <a href="{{route('reservations.index')}}">予約確認</a>
 
   <h3>お気に入り一覧</h3>
-  <a href="">お気に入り</a>
+  <a href="{{route('mypage.favorite')}}">お気に入り</a>
   <h3>会員情報</h3>
   <a href="{{route('mypage')}}">編集</a>
   <h3>会社情報</h3>

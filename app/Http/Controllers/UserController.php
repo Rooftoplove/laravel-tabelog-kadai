@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,5 +44,14 @@ class UserController extends Controller
         $user->update();
 
         return to_route('mypage');
+    }
+
+    public function favorite()
+    {
+        $user = Auth::user();
+
+        $restaurants = $user->getFavoriteItems(Restaurant::class)->get();
+
+        return view('users.favorite', compact('restaurants'));
     }
 }
