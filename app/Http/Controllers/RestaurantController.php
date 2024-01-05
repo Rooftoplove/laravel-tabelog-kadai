@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
@@ -16,8 +17,8 @@ class RestaurantController extends Controller
 
     public function detail(Restaurant $restaurant)
     {
-
-        return view('restaurants.detail', compact('restaurant'));
+        $reviews = Review::where('restaurant_id', '=', $restaurant->id)->get();
+        return view('restaurants.detail', compact('restaurant', 'reviews'));
     }
 
     public function favorite(Restaurant $restaurant)

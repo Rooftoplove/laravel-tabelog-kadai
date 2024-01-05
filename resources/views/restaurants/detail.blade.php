@@ -31,6 +31,10 @@
 
 
   <h2>レビュー</h2>
+  @foreach ($reviews as $review)
+  <div>{{$review->comment}}</div>
+
+  @endforeach
 
   <a href="{{route('reviews.index',['restaurant_id'=>$restaurant->id])}}">レビュー投稿</a></td>
 </body>
