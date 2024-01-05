@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurant;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,11 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class ReviewController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $reviews = Review::all();
+        $restaurantId = $request->input('restaurant_id');
+        $restaurant = Restaurant::find($restaurantId);
 
-        return view('reviews.index', compact('reviews'));
+        return view('reviews.index', compact('restaurant'));
     }
 
     /**
@@ -31,6 +33,6 @@ class ReviewController extends Controller
         $review->comment = $request->input('comment');
         $review->save();
 
-        return redirect()->route('reviews.index');
+        return redirect()->route('restaurants.index');
     }
 }

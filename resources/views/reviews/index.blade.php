@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <h1>{{$restaurant->store_name}}のレビュー</h1>
   <form method="POST" action="{{route('reviews.register')}}">
     @csrf
     <label for="evaluation">評価：</label>

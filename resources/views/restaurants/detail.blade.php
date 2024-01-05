@@ -32,5 +32,5 @@
 
   <h2>レビュー</h2>
 
-  <a href="{{route('reviews.index')}}">レビュー投稿</a></td>
+  <a href="{{route('reviews.index',['restaurant_id'=>$restaurant->id])}}">レビュー投稿</a></td>
 </body>
