@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -43,3 +44,5 @@ Route::controller(UserController::class)->group(function () {
   Route::put('users/mypage', 'update')->name('mypage.update');
   Route::get('users/mypage/favorite', 'favorite')->name('mypage.favorite');
 });
+
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');

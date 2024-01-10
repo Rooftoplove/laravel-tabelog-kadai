@@ -25,7 +25,7 @@
   <h3>会員情報</h3>
   <a href="{{route('mypage')}}">編集</a>
   <h3>会社情報</h3>
-  <a href="">会社情報</a>
+  <a href="{{route('companies.index')}}">会社情報</a>
 
   @endsection
 </body>
