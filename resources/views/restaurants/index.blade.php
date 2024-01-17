@@ -15,7 +15,10 @@
 </head>
 
 <body>
-  <a>検索</a>
+  <form method="GET">
+    <input type="text" name="keyword">
+    <input type="submit" value="検索">
+  </form>
   <div class="container">
     <table>
       <tr>

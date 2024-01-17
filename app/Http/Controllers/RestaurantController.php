@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
 use App\Models\Review;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $restaurants = Restaurant::all();
+        $keyword = $request->input('keyword');
+
+        $query = Restaurant::query();
+        $query->where('store_name', 'like', "%{$keyword}%");
+        $restaurants = $query->get();
+
 
         return view('restaurants.index', compact('restaurants'));
     }
