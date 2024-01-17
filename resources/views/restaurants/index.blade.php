@@ -17,6 +17,12 @@
 <body>
   <form method="GET">
     <input type="text" name="keyword">
+    <select name="category_id" id="select-category">
+      <option value="">カテゴリ</option>
+      @foreach ($categories as $category)
+      <option value="{{$category->id}}">{{$category->name}}</option>
+      @endforeach
+    </select>
     <input type="submit" value="検索">
   </form>
   <div class="container">
