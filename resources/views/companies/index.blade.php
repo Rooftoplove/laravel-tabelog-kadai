@@ -3,7 +3,7 @@
 
 @section('content')
 @include('components.header')
-<a href="{{route('home')}}">ホーム</a> > 会社情報
+<a href="{{route('restaurants.index')}}">ホーム</a> > 会社情報
 <table>
   <tr>
     <th>会社名</th>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Auth;
@@ -23,9 +24,9 @@ use App\Models\Restaurant;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/restaurants/index', [RestaurantController::class, 'index'])->name('restaurants.index');
+Route::get('/', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 Route::post('/reviews/register', [ReviewController::class, 'store'])->name('reviews.register');
@@ -47,3 +48,9 @@ Route::controller(UserController::class)->group(function () {
 });
 
 Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+
+Route::controller(CheckoutController::class)->group(function () {
+  Route::get('checkout', 'index')->name('checkout.index');
+  Route::post('checkout', 'store')->name('checkout.store');
+  Route::get('checkout/success', 'success')->name('checkout.success');
+});

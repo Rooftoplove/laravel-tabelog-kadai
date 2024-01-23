@@ -1,8 +1,12 @@
 <header class="home-header">
-  <h1><a href="{{route('home')}}">NAGOYAMESHI</a></h1>
+  <h1><a href="{{route('restaurants.index')}}">NAGOYAMESHI</a></h1>
   <nav>
     <ul>
       <li><a href="{{route('restaurants.index')}}">店舗一覧</a></li>
+      <li><a href="{{route('reservations.index')}}">予約一覧</a></li>
+      <li><a href="{{route('mypage.favorite')}}">お気に入り一覧</a></li>
+      <li><a href="{{route('mypage')}}">会員情報編集</a></li>
+      <li><a href="{{route('companies.index')}}">会社情報</a></li>
     </ul>
   </nav>
   <nav>
@@ -15,4 +19,5 @@
     </form>
     @endauth
   </nav>
+
 </header>

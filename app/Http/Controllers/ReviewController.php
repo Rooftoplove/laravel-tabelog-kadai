@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-
     public function index(Request $request)
     {
         $restaurantId = $request->input('restaurant_id');
