@@ -69,4 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Reservation::class);
     }
+
+    public function getIsPaidMemberAttribute()
+    {
+        return $this->attributes['member_status'] == 'paid';
+    }
 }
