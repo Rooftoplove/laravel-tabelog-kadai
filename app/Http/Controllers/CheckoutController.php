@@ -3,73 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Stripe\Checkout\Session;
+use Stripe\Stripe;
 
 class CheckoutController extends Controller
 {
     public function index()
     {
-        $cart = Cart::instance(Auth::user()->id)->content();
-
-        $total = 0;
-        $has_carriage_cost = false;
-        $carriage_cost = 0;
-
-        foreach ($cart as $c) {
-            $total += $c->qty * $c->price;
-            if ($c->options->carriage) {
-                $has_carriage_cost = true;
-            }
-        }
-
-        if ($has_carriage_cost) {
-            $total += env('CARRIAGE');
-            $carriage_cost = env('CARRIAGE');
-        }
-
-        return view('checkout.index', compact('cart', 'total', 'carriage_cost'));
+        return view('checkout.index');
     }
 
     public function store(Request $request)
     {
-        $cart = Cart::instance(Auth::user()->id)->content();
-
-        $has_carriage_cost = false;
-
-        foreach ($cart as $product) {
-            if ($product->options->carriage) {
-                $has_carriage_cost = true;
-            }
-        }
-
         Stripe::setApiKey(env('STRIPE_SECRET'));
-
-        $line_items = [];
-
-        foreach ($cart as $product) {
-            $line_items[] = [
-                'price_data' => [
-                    'currency' => 'jpy',
-                    'product_data' => [
-                        'name' => $product->name,
-                    ],
-                    'unit_amount' => $product->price,
+        $line_items[] = [
+            'price_data' => [
+                'currency' => 'jpy',
+                'product_data' => [
+                    'name' => '有料会員登録料金',
                 ],
-                'quantity' => $product->qty,
-            ];
-        }
-
-        if ($has_carriage_cost) {
-            $line_items[] = [
-                'price_data' => [
-                    'currency' => 'jpy',
-                    'product_data' => [
-                        'name' => '送料',
-                    ],
-                    'unit_amount' => env('CARRIAGE'),
-                ],
-                'quantity' => 1,
-            ];
-        }
+                'unit_amount' => env('MEMBERSHIP_FEE'),
+            ],
+            'quantity' => 1,
+        ];
 
         $checkout_session = Session::create([
             'line_items' => $line_items, //支払い対象となる商品
@@ -83,6 +40,9 @@ class CheckoutController extends Controller
 
     public function success()
     {
+        $user = Auth::user();
+        $user->member_status = "paid";
+        $user->update();
         return view('checkout.success');
     }
 }
