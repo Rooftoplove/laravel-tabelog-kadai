@@ -1,3 +1,8 @@
+@extends('layouts.app')
+@section('title', 'Home')
+
+@section('content')
+@include('components.header')
 <div class="container  d-flex justify-content-center mt-3">
   <div class="w-75">
     <h1>お気に入り</h1>

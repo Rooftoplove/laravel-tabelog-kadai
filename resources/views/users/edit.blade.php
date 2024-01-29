@@ -47,11 +47,10 @@
         <br>
 
         <hr>
-        <button type="submit" class="btn samuraimart-submit-button mt-3 w-25">
+        <button type="submit">
           保存
         </button>
       </form>
-      <hr>
       <div class="d-flex justify-content-start">
         <form method="POST" action="{{ route('mypage.destroy') }}">
           @csrf

@@ -16,9 +16,9 @@
   <td>定休日：{{ $restaurant->regular_holiday }}</td><br>
   <td>価格：{{ $restaurant->lower_price }}〜{{ $restaurant->max_price }}</td><br>
 
+  @if ($user->is_paid_member)
   <td><a href="{{route('subscription',['restaurant_id'=>$restaurant->id])}}">予約追加</a></td>
   <br>
-
 
   <a href="{{route('restaurants.favorite' , $restaurant)}}">
     @if ($restaurant->hasBeenFavoritedBy(Auth::user()))
@@ -28,13 +28,15 @@
     @endif
   </a>
 
+  @endif
 
 
   <h2>レビュー</h2>
   @foreach ($reviews as $review)
   <div>{{$review->comment}}</div>
-
   @endforeach
 
+  @auth
   <a href="{{route('reviews.index',['restaurant_id'=>$restaurant->id])}}">レビュー投稿</a></td>
+  @endauth
 </body>

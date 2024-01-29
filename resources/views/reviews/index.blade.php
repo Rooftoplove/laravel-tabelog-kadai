@@ -1,3 +1,8 @@
+@extends('layouts.app')
+@section('title', 'Home')
+
+@section('content')
+@include('components.header')
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,7 +14,7 @@
 
 <body>
   <h1>{{$restaurant->store_name}}のレビュー</h1>
-  <form method="POST" action="{{route('reviews.register')}}">
+  <form method=" POST" action="{{route('reviews.register')}}">
     @csrf
     <label for="evaluation">評価：</label>
     <input type="number" name="evaluation" min="0" max="5" require>

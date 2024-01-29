@@ -13,6 +13,6 @@
   <form action="{{route('checkout.store')}}" method="POST">
     @csrf
     <button type="button" onclick="history.back()">戻る</button>
-    <button type="submit" class="btn text-white w-100">支払いへ</button>
+    <button type="submit">支払いへ</button>
   </form>
 </body>

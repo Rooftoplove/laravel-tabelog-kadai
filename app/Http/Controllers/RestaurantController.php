@@ -29,8 +29,9 @@ class RestaurantController extends Controller
 
     public function detail(Restaurant $restaurant)
     {
+        $user = Auth::user();
         $reviews = Review::where('restaurant_id', '=', $restaurant->id)->get();
-        return view('restaurants.detail', compact('restaurant', 'reviews'));
+        return view('restaurants.detail', compact('restaurant', 'reviews', 'user'));
     }
 
     public function favorite(Restaurant $restaurant)

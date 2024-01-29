@@ -10,21 +10,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resourses/css/bootstrap.min.css">
   <title>店舗一覧</title>
 </head>
 
 <body>
-  <form method="GET">
-    <input type="text" name="keyword">
-    <select name="category_id" id="select-category">
-      <option value="">カテゴリ</option>
-      @foreach ($categories as $category)
-      <option value="{{$category->id}}">{{$category->name}}</option>
-      @endforeach
-    </select>
-    <input type="submit" value="検索">
-  </form>
+  <div class="container text-center w-25" style="margin-top:100px">
+    <form method="GET">
+      <input type="text" name="keyword">
+      <select name="category_id" id="select-category">
+        <option value="">カテゴリ</option>
+        @foreach ($categories as $category)
+        <option value="{{$category->id}}">{{$category->name}}</option>
+        @endforeach
+      </select>
+      <input type="submit" value="検索">
+    </form>
+  </div>
+
   <div class="container mt-4">
     <div class="row">
       @foreach ($restaurants as $restaurant)
