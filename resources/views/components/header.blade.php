@@ -4,6 +4,7 @@
   <nav class="navbar navbar-light bg-light fixed-top">
     <!-- タイトル -->
     <a class="navbar-brand" href="{{route('restaurants.index')}}">NAGOYAMESHI</a>
+
     @guest
     <div class="text-light">
       <button type="button" class="btn btn-outline-primary">
@@ -19,6 +20,7 @@
     @endguest
 
     @auth
+    <p class="text-left">{{Auth::user()->name}}さん</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

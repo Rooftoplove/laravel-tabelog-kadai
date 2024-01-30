@@ -13,8 +13,6 @@
     <div>{{$restaurant->store_name}}</div>
 
     @endforeach
-
-
     <hr>
   </div>
 </div>
