@@ -33,6 +33,7 @@
 
       <h2>レビュー</h2>
       @foreach ($reviews as $review)
+      <div>{{str_repeat('★',$review->evaluation)}}</div>
       <div>{{$review->comment}}</div>
       @endforeach
       <hr>

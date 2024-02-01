@@ -1,6 +1,7 @@
 <header class="home-header">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
   <nav class="navbar navbar-light bg-light fixed-top">
     <!-- タイトル -->
     <a class="navbar-brand" href="{{route('restaurants.index')}}">NAGOYAMESHI</a>
@@ -20,7 +21,7 @@
     @endguest
 
     @auth
-    <p class="text-left">{{Auth::user()->name}}さん</p>
+    <p>{{Auth::user()->name}}さん</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

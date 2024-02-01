@@ -29,6 +29,7 @@ Auth::routes(['verify' => true]);
 Route::get('/', [RestaurantController::class, 'index'])->name('restaurants.index');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+Route::get('/reviews/register', [ReviewController::class, 'store'])->name('reviews.register');
 Route::post('/reviews/register', [ReviewController::class, 'store'])->name('reviews.register');
 
 Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'detail'])->name('restaurants.detail');

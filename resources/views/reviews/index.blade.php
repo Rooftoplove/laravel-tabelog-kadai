@@ -17,7 +17,13 @@
   <form method=" POST" action="{{route('reviews.register')}}">
     @csrf
     <label for="evaluation">評価：</label>
-    <input type="number" name="evaluation" min="0" max="5" require>
+    <select name="evaluation">
+      <option value="5" class="review-score-color">★★★★★</option>
+      <option value="4" class="review-score-color">★★★★</option>
+      <option value="3" class="review-score-color">★★★</option>
+      <option value="2" class="review-score-color">★★</option>
+      <option value="1" class="review-score-color">★</option>
+    </select>
     <br>
     <label for="comment">コメント</label>
     <br>
