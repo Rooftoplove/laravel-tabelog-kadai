@@ -3,8 +3,8 @@
 @include('components.header')
 
 <body>
-  <div class="container  d-flex justify-content-center mt-3">
-    <div class="w-75">
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="w-75 mt-5">
       <h1>{{$restaurant->store_name}}</h1>
       <td>電話番号：{{ $restaurant->telephone }}</td><br>
       <td>住所：{{ $restaurant->address }}</td><br>
