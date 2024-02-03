@@ -4,15 +4,14 @@
 @section('content')
 @include('components.header')
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="w-75 mt-5">
       <span>
         <a href="{{route('restaurants.index')}}">ホーム</a> > <a href="{{ route('mypage') }}">マイページ</a> > 会員情報の編集
       </span>
 
       <h1 class="mt-3 mb-3">会員情報の編集</h1>
       <hr>
-
       <form method="POST" action="{{ route('mypage') }}">
         @csrf
         <input type="hidden" name="_method" value="PUT">
@@ -51,6 +50,8 @@
           保存
         </button>
       </form>
+
+      <hr>
       <div class="d-flex justify-content-start">
         <form method="POST" action="{{ route('mypage.destroy') }}">
           @csrf

@@ -27,13 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{route('reservations.index')}}">予約一覧</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('mypage.favorite')}}">お気に入り一覧</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('mypage')}}">会員情報編集</a>
+          <a class="nav-link" href="{{route('mypage')}}">ユーザー情報</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('companies.index')}}">会社情報</a>
@@ -46,6 +40,7 @@
         </form>
       </ul>
     </div>
+
     @endauth
   </nav>
 

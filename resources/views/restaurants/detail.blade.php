@@ -13,6 +13,7 @@
       <td>定休日：{{ $restaurant->regular_holiday }}</td><br>
       <td>価格：{{ $restaurant->lower_price }}〜{{ $restaurant->max_price }}</td><br>
       <hr>
+
       @auth
       @if ($user->is_paid_member)
       <button><a href="{{route('subscription',['restaurant_id'=>$restaurant->id])}}">予約</a></button>
