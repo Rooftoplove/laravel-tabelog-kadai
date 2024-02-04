@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
-use App\Models\Reservation;
-use App\Models\Restaurant;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +21,6 @@ use App\Models\Restaurant;
 */
 
 Auth::routes(['verify' => true]);
-
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [RestaurantController::class, 'index'])->name('restaurants.index');
 

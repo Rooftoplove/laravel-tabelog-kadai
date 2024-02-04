@@ -26,6 +26,14 @@
       </select>
       <input type="submit" value="検索">
     </form>
+    @if($message)
+    <p>{{ $message }}</p>
+    @else
+    {{-- 検索結果がある場合の表示ロジック --}}
+    @foreach ($restaurants as $restaurant)
+    {{-- レストランの表示ロジック --}}
+    @endforeach
+    @endif
   </div>
 
   <div class="container mt-4">

@@ -23,8 +23,10 @@ class RestaurantController extends Controller
         }
         $restaurants = $query->get();
 
+        // 検索結果が空であればメッセージを表示
+        $message = $restaurants->isEmpty() ? '検索結果はありませんでした。' : null;
 
-        return view('restaurants.index', compact('restaurants', 'categories'));
+        return view('restaurants.index', compact('restaurants', 'categories', 'message'));
     }
 
     public function detail(Restaurant $restaurant)
