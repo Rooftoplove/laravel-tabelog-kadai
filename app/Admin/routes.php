@@ -4,6 +4,7 @@ use App\Admin\Controllers\CategoryController;
 use App\Admin\Controllers\RestaurantController;
 use App\Admin\Controllers\UserController;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 
 Admin::routes();
 

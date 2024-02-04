@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn dashboard-delete-link" data-bs-dismiss="modal">キャンセル</button>
-                  <button type="submit" class="btn samuraimart-delete-submit-button">退会する</button>
+                  <button type="submit">退会する</button>
                 </div>
               </div>
             </div>
