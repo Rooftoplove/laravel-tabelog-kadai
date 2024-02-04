@@ -4,15 +4,16 @@
 @section('content')
 @include('components.header')
 
-<!DOCTYPE html>
-<html lang="ja">
-
 <body>
-  <div>有料会員登録しますがよろしいですか</div>
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="w-75 mt-5">
+      <p>有料会員登録しますがよろしいですか</p>
 
-  <form action="{{route('checkout.store')}}" method="POST">
-    @csrf
-    <button type="button" onclick="history.back()">戻る</button>
-    <button type="submit">支払いへ</button>
-  </form>
+      <form action="{{route('checkout.store')}}" method="POST">
+        @csrf
+        <button type="button" onclick="history.back()">戻る</button>
+        <button type="submit">支払いへ</button>
+      </form>
+    </div>
+  </div>
 </body>
