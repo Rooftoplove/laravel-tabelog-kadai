@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
 @include('components.header')
 
 <body>
