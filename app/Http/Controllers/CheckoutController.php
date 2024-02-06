@@ -42,7 +42,11 @@ class CheckoutController extends Controller
     {
         $user = Auth::user();
         $user->member_status = "paid";
-        $user->update();
+        $user->member_ship_fee = intval(env('MEMBERSHIP_FEE', 0)); // メンバーシップ料金を取得し、整数に変換して設定
+        $user->save(); // ユーザー情報を更新
+
+        $user->touch(); // タイムスタンプを更新
+
         return view('checkout.success');
     }
 }

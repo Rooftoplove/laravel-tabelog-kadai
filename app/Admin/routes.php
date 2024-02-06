@@ -1,6 +1,7 @@
 <?php
 
 use App\Admin\Controllers\CategoryController;
+use App\Admin\Controllers\MemberShipFeeController;
 use App\Admin\Controllers\RestaurantController;
 use App\Admin\Controllers\UserController;
 use Illuminate\Routing\Router;
@@ -19,4 +20,5 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('restaurants', RestaurantController::class);
     $router->resource('users', UserController::class);
+    $router->resource('member-ship-fees', MemberShipFeeController::class)->only('index');
 });
