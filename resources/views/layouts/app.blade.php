@@ -10,7 +10,6 @@
 
 <body>
 
-
     <main>
         @yield('content') <!-- 子テンプレートの内容が挿入される -->
     </main>
