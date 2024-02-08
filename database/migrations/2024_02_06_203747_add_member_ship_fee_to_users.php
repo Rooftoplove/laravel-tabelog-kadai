@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('member_ship_fee')->after('member_status');
+            $table->string('member_ship_fee')->default('0')->after('member_status');
         });
     }
 
