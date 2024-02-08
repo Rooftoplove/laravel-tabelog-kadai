@@ -16,7 +16,8 @@ class ReservationController extends Controller
 
     public function index()
     {
-        $reservations = Reservation::all();
+        $user = Auth::user();
+        $reservations = Reservation::where('user_id', $user->id)->get();
 
         return view('reservations.index', compact('reservations'));
     }
